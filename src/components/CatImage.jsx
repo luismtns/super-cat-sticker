@@ -8,10 +8,10 @@ function CatImage() {
   const imageRef = useRef(null);
 
   const baseUrl = 'https://cataas.com/cat';
-  const [tag, setTag] = useState('orange');
-  const [say, setSay] = useState('quero cu');
-  const [fontSize, setFontSize] = useState(92);
-  const [fontColor, setFontColor] = useState('red');
+  const [tag, setTag] = useState('');
+  const [say, setSay] = useState('');
+  const [fontSize, setFontSize] = useState();
+  const [fontColor, setFontColor] = useState('');
   const [timestamp, setTimestamp] = useState(Date.now());
 
   const placeholderImg = 'https://placehold.co/800x800?text=Generate+a+super+cat';
