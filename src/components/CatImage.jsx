@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Input, Autocomplete, AutocompleteSection, AutocompleteItem, Button, Image } from '@nextui-org/react';
+import { Input, Button, Image } from '@nextui-org/react';
 
 import StickerButton from './StickerButton';
 import TagInput from './TagInput';
+import { getImageURL } from '../services/cataasService';
 
 function CatImage() {
   const imageRef = useRef(null);
@@ -21,12 +22,7 @@ function CatImage() {
     setImageUrl(placeholderImg);
     setTimestamp(Date.now());
     setTimeout(() => {
-      setImageUrl(
-        baseUrl +
-          (tag ? `/${tag}` : '') +
-          (say ? `/says/${encodeURIComponent(say)}` : '') +
-          `?fontSize=${encodeURIComponent(fontSize)}&fontColor=${encodeURIComponent(fontColor)}&timestamp=${timestamp}`
-      );
+      setImageUrl(getImageURL({ tag, say, fontSize, fontColor, timestamp }));
     }, 200);
   };
   const handleError = () => {
@@ -41,7 +37,6 @@ function CatImage() {
       <div className='p-4 flex flex-col gap-3'>
         <h3 className='text-xl'>1. Choose Your Tags</h3>
         <p>Use the Tags field to pick categories and themes for your cat image.</p>
-        {/* <MultiselectSearch array={tags} label='Tags' isLoading={isLoadingTags} onChange={(e) => setTag(e.join(', '))} /> */}
 
         <TagInput label='Insert Cat Tags' onChange={(e) => setTag(e.join(', '))} />
       </div>
@@ -103,7 +98,7 @@ function CatImage() {
           ref={imageRef}
           crossOrigin='anonymous'
           className='w-full max-w-md mx-auto'
-          onError={handleError} // Trigger fallback on error
+          onError={handleError}
           style={{
             border: hasError ? '1px solid #ccc' : '1px solid transparent',
           }}
