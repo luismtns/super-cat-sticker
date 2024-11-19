@@ -125,7 +125,7 @@ export const fetchCatTags = async () => {
 
 ## Demo
 
-- [Online Demo](https://github.com/luisbovo)
+- [Online Demo](https://super-cat-sticker.vercel.app/)
 
 ---
 
@@ -133,8 +133,8 @@ export const fetchCatTags = async () => {
 
 **Luis Otávio Bovo**
 
-- [GitHub](https://github.com/luisbovo)
-- [LinkedIn](https://linkedin.com/in/luisbovo)
+- [GitHub](https://github.com/luismtns)
+- [LinkedIn](https://linkedin.com/in/luismtns)
 
 ---
 
