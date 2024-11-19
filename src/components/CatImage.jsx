@@ -43,7 +43,7 @@ function CatImage() {
         <p>Use the Tags field to pick categories and themes for your cat image.</p>
         {/* <MultiselectSearch array={tags} label='Tags' isLoading={isLoadingTags} onChange={(e) => setTag(e.join(', '))} /> */}
 
-        <TagInput label='Search for Cat Tags' onChange={(e) => setTag(e.join(', '))} />
+        <TagInput label='Insert Cat Tags' onChange={(e) => setTag(e.join(', '))} />
       </div>
 
       <div className='p-4 flex flex-col gap-3'>
@@ -54,9 +54,8 @@ function CatImage() {
         </p>
         <Input
           id='say'
-          label='Say'
           type='text'
-          placeholder='say'
+          placeholder='Message'
           value={say}
           onChange={(e) => setSay(e.currentTarget.value)}
           size='lg'
@@ -67,23 +66,22 @@ function CatImage() {
         <h3 className='text-xl'>3. Customize Text Settings</h3>
         <p>Enhance your message by adjusting its appearance:</p>
         <div className='flex flex-row gap-3'>
-          <div className='w-1/3'>
+          <div className='w-3/6 max-w-48'>
             <Input
               id='fontColor'
-              label='Text Color'
               type='color'
-              placeholder='fontColor'
+              label='Text Color'
+              placeholder='Text Color'
               value={fontColor}
               onChange={(e) => setFontColor(e.currentTarget.value)}
               size='lg'
             />
           </div>
-          <div className='w-4/6'>
+          <div className='w-3/6 max-w-48'>
             <Input
-              label='Text Size'
               id='fontSize'
               type='number'
-              placeholder='fontSize'
+              label='Text Size'
               value={fontSize}
               onChange={(e) => setFontSize(isNaN(Number(e.currentTarget.value)) ? 52 : Number(e.currentTarget.value))}
               size='lg'
@@ -94,7 +92,7 @@ function CatImage() {
 
       <div className='p-4 flex justify-between gap-3 w-full flex-row-reverse'>
         <Button color='primary' onClick={() => refreshImage()} size='lg'>
-          {!imageUrl ? 'Generate' : 'Refresh'} ✨
+          {'Generate a cat'} ✨
         </Button>
       </div>
 
@@ -107,12 +105,12 @@ function CatImage() {
           className='w-full max-w-md mx-auto'
           onError={handleError} // Trigger fallback on error
           style={{
-            border: hasError ? '1px solid #ccc' : '',
+            border: hasError ? '1px solid #ccc' : '1px solid transparent',
           }}
         />
       </div>
       <div className='flex flex-row justify-center mt-4 pb-8'>
-        {!!imageUrl && imageRef.current && <StickerButton imageRef={imageRef} />}
+        {!!imageUrl && imageRef.current && <StickerButton imageRef={imageRef} timestamp={timestamp} />}
       </div>
     </article>
   );

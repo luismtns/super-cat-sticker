@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Link } from '@nextui-org/react';
 import { convertToSticker } from '../utils/convertToSticker';
 
@@ -7,11 +7,18 @@ import { convertToSticker } from '../utils/convertToSticker';
  *
  * @param {Object} props
  * @param {React.RefObject<HTMLImageElement>} props.imageRef - A reference to the <img> element.
+ * @param {Number} props.timestamp - Timestamp to update comp
  * @returns {JSX.Element}
  */
-const StickerButton = ({ imageRef }) => {
+const StickerButton = ({ imageRef, timestamp }) => {
   const [stickerURL, setStickerURL] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setStickerURL(null);
+    setIsLoading(false);
+    return () => {};
+  }, [timestamp]);
 
   const handleConvertSticker = async () => {
     if (imageRef?.current) {
