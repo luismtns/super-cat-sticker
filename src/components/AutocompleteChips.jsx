@@ -1,10 +1,8 @@
 // src/components/AutocompleteChips.js
-import React, { useState } from 'react';
-import { Input, Dropdown, Chip, Button, Skeleton } from "@heroui/react";
+import { Chip, Dropdown, Input, Skeleton } from '@heroui/react';
+import { useState } from 'react';
 
 const AutocompleteChips = ({ options, isLoading }) => {
-  console.log({ options });
-
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [filteredOptions, setFilteredOptions] = useState(options || []);
