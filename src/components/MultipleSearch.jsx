@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Autocomplete, AutocompleteItem, Chip } from '@nextui-org/react';
+import { Autocomplete, AutocompleteItem, Chip } from "@heroui/react";
 import { X, Check } from 'lucide-react';
 
 const MultiselectSearch = ({ array, label, onChange, isLoading }) => {

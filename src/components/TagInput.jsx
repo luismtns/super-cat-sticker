@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Chip, Input, Button } from '@nextui-org/react';
+import { Chip, Input, Button } from "@heroui/react";
 import { X } from 'lucide-react';
 import { fetchCatTags } from '../services/cataasService';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Autocomplete, AutocompleteItem, Chip } from '@nextui-org/react';
-import { useInfiniteScroll } from '@nextui-org/use-infinite-scroll';
+import { Autocomplete, AutocompleteItem, Chip } from "@heroui/react";
+import { useInfiniteScroll } from "@heroui/use-infinite-scroll";
 import { X, Check } from 'lucide-react';
 import { fetchCatTags } from '../services/cataasService';
 

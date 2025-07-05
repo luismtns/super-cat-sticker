@@ -1,6 +1,6 @@
 // src/components/AutocompleteChips.js
 import React, { useState } from 'react';
-import { Input, Dropdown, Chip, Button, Skeleton } from '@nextui-org/react';
+import { Input, Dropdown, Chip, Button, Skeleton } from "@heroui/react";
 
 const AutocompleteChips = ({ options, isLoading }) => {
   console.log({ options });

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Input, Button, Image } from '@nextui-org/react';
+import { Input, Button, Image } from "@heroui/react";
 
 import StickerButton from './StickerButton';
 import TagInput from './TagInput';
